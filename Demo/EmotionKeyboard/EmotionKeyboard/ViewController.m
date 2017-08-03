@@ -47,6 +47,7 @@ static const char kNSTextAttachmentChs;
 - (BSEmotionKeyboard *)emotionKeyboard
 {
     if (!_emotionKeyboard) {
+        // 初始化键盘
         [BSEmotionKeyboard setKeyboardHeight:kDIYKeyboardHeight];
         _emotionKeyboard = [BSEmotionKeyboard emotionKeyboard];
         _emotionKeyboard.emotionModels = [self createEmotionData];
@@ -54,6 +55,7 @@ static const char kNSTextAttachmentChs;
     return _emotionKeyboard;
 }
 
+/// 创建BSEmotionKeyboard数据的方法
 - (NSArray<BSEmotionModel *> *)createEmotionData
 {
     NSMutableArray<BSEmotionModel *> *models = [NSMutableArray array];
@@ -106,6 +108,7 @@ static const char kNSTextAttachmentChs;
     self.textView.text = @"点击这里哦!";
     self.textView.inputView = self.emotionKeyboard;
     
+    // 添加键盘操作的相关通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickSmallPicture:) name:kEmotionKeyboardDidClickSmallPicture object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickEmoji:) name:kEmotionKeyboardDidClickEmoji object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickLargePicture:) name:kEmotionKeyboardDidClickLargePicture object:nil];
