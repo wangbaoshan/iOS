@@ -37,6 +37,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = @"请看控制台";
     
     [self logCurrentNetStatus];
     

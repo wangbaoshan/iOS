@@ -25,6 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.navigationItem.title = @"请看控制台";
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netStatusChange:) name:kNoti_AFNetworkReachabilityStatusUnknown object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netStatusChange:) name:kNoti_AFNetworkReachabilityStatusNotReachable object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netStatusChange:) name:kNoti_AFNetworkReachabilityStatusReachableViaWWAN object:nil];
