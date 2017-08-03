@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16B2657" minimumToolsVersion="Xcode 8.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="CompanyInfo" representedClassName="CompanyInfo" syncable="YES">
+        <attribute name="companyAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="companyRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompanyRecord" inverseName="companyInfo" inverseEntity="CompanyRecord" syncable="YES"/>
+    </entity>
+    <entity name="CompanyRecord" representedClassName="CompanyRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="companyInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompanyInfo" inverseName="companyRecord" inverseEntity="CompanyInfo" syncable="YES"/>
+    </entity>
+    <entity name="PunchInfo" representedClassName="PunchInfo" syncable="YES">
+        <attribute name="afternoonRecord" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dayString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morningRecord" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yearMonthString" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="punchRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PunchRecord" inverseName="punchInfo" inverseEntity="PunchRecord" syncable="YES"/>
+    </entity>
+    <entity name="PunchRecord" representedClassName="PunchRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="punchInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PunchInfo" inverseName="punchRecord" inverseEntity="PunchInfo" syncable="YES"/>
+    </entity>
+    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
+        <attribute name="currentLogin" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastLogined" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userIcon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserRecord" inverseName="userInfo" inverseEntity="UserRecord" syncable="YES"/>
+    </entity>
+    <entity name="UserRecord" representedClassName="UserRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="userRecord" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="userSettingInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSettingInfo" inverseName="userRecord" inverseEntity="UserSettingInfo" syncable="YES"/>
+    </entity>
+    <entity name="UserSettingInfo" representedClassName="UserSettingInfo" syncable="YES" codeGenerationType="class">
+        <relationship name="userRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserRecord" inverseName="userSettingInfo" inverseEntity="UserRecord" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CompanyInfo" positionX="-468" positionY="-3735" width="128" height="105"/>
+        <element name="CompanyRecord" positionX="-441" positionY="-3591" width="128" height="90"/>
+        <element name="PunchInfo" positionX="-290" positionY="-3699" width="128" height="165"/>
+        <element name="PunchRecord" positionX="-450" positionY="-3600" width="128" height="90"/>
+        <element name="UserInfo" positionX="-657" positionY="-3627" width="128" height="135"/>
+        <element name="UserRecord" positionX="-468" positionY="-3618" width="128" height="90"/>
+        <element name="UserSettingInfo" positionX="-459" positionY="-3609" width="128" height="60"/>
+    </elements>
+</model>

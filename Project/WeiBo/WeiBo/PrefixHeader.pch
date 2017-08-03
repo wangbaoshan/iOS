@@ -1,0 +1,45 @@
+//
+//  PrefixHeader.pch
+//  WeiBo
+//
+//  Created by wbs on 17/2/6.
+//  Copyright © 2017年 xiaomaolv. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "SystemParameter.h"
+#import "DIYConst.h"
+#import "Singleton.h"
+#import "APIConst.h"
+#import "Notification.h"
+
+#import "WBNetAPIBusiness.h"
+
+#import "UIBarButtonItem+BS.h"
+#import "NSObject+Tips.h"
+#import "SVProgressHUD+Tips.h"
+#import "UIImage+BS.h"
+#import "UIView+Extension.h"
+
+#import "Colours.h"
+
+#import "MJRefresh.h"
+#import "MJExtension.h"
+#import "SVProgressHUD.h"
+#import "UIImageView+WebCache.h"
+
+#endif
+
+
+#endif /* PrefixHeader_pch */

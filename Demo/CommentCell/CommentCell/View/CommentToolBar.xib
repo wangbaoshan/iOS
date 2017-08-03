@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CommentToolBar">
+            <rect key="frame" x="0.0" y="0.0" width="411" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="评论" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tUe-qB-Ox7">
+                    <rect key="frame" x="15" y="5" width="332" height="34"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geV-ig-kKZ">
+                    <rect key="frame" x="357" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="geV-ig-kKZ" secondAttribute="height" id="6ca-8q-8V9"/>
+                    </constraints>
+                    <state key="normal" image="compose_emoticonbutton_background"/>
+                    <state key="highlighted" image="compose_emoticonbutton_background_highlighted"/>
+                    <connections>
+                        <action selector="keyboardChange" destination="iN0-l3-epB" eventType="touchUpInside" id="Tm6-vh-l3a"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="geV-ig-kKZ" secondAttribute="bottom" id="IO1-br-Mzs"/>
+                <constraint firstItem="geV-ig-kKZ" firstAttribute="leading" secondItem="tUe-qB-Ox7" secondAttribute="trailing" constant="10" id="Jm2-tS-fT7"/>
+                <constraint firstAttribute="trailing" secondItem="geV-ig-kKZ" secondAttribute="trailing" constant="10" id="NCr-mD-sw2"/>
+                <constraint firstAttribute="bottom" secondItem="tUe-qB-Ox7" secondAttribute="bottom" constant="5" id="Oun-SS-eln"/>
+                <constraint firstItem="tUe-qB-Ox7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="YVf-9g-yu2"/>
+                <constraint firstItem="geV-ig-kKZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wQF-m5-ttk"/>
+                <constraint firstItem="tUe-qB-Ox7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="xLK-Mm-PZu"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="keyboardChangeButton" destination="geV-ig-kKZ" id="tMQ-Qe-Rmk"/>
+                <outlet property="textFileld" destination="tUe-qB-Ox7" id="aMu-z9-NCK"/>
+            </connections>
+            <point key="canvasLocation" x="37.5" y="-121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background_highlighted" width="24" height="24"/>
+    </resources>
+</document>
