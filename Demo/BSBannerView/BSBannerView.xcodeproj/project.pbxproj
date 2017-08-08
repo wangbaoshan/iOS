@@ -310,6 +310,7 @@
 				TargetAttributes = {
 					9277297D1F30BAA700D082C4 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 896998587B;
 						ProvisioningStyle = Automatic;
 					};
 					927729961F30BAA700D082C4 = {
@@ -544,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 896998587B;
 				INFOPLIST_FILE = BSBannerView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -556,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 896998587B;
 				INFOPLIST_FILE = BSBannerView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -629,6 +632,7 @@
 				927729AD1F30BAA800D082C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		927729AE1F30BAA800D082C4 /* Build configuration list for PBXNativeTarget "BSBannerViewTests" */ = {
 			isa = XCConfigurationList;
@@ -637,6 +641,7 @@
 				927729B01F30BAA800D082C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		927729B11F30BAA800D082C4 /* Build configuration list for PBXNativeTarget "BSBannerViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -645,6 +650,7 @@
 				927729B31F30BAA800D082C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

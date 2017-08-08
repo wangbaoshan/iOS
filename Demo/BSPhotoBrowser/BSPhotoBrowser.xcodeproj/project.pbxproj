@@ -34,6 +34,7 @@
 		927729721F3030A700D082C4 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 927729601F3030A700D082C4 /* UIImageView+HighlightedWebCache.m */; };
 		927729731F3030A700D082C4 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 927729621F3030A700D082C4 /* UIImageView+WebCache.m */; };
 		927729741F3030A700D082C4 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 927729641F3030A700D082C4 /* UIView+WebCacheOperation.m */; };
+		92FA3EF31F39A43900D58A7B /* BSPhotoBrowserHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FA3EF21F39A43900D58A7B /* BSPhotoBrowserHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		927729621F3030A700D082C4 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		927729631F3030A700D082C4 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		927729641F3030A700D082C4 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		92FA3EF11F39A43900D58A7B /* BSPhotoBrowserHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoBrowserHUD.h; sourceTree = "<group>"; };
+		92FA3EF21F39A43900D58A7B /* BSPhotoBrowserHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoBrowserHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 				9277293D1F30308400D082C4 /* BSPhotoBrowser.m */,
 				9277293E1F30308400D082C4 /* BSPhotoCell.h */,
 				9277293F1F30308400D082C4 /* BSPhotoCell.m */,
+				92FA3EF11F39A43900D58A7B /* BSPhotoBrowserHUD.h */,
+				92FA3EF21F39A43900D58A7B /* BSPhotoBrowserHUD.m */,
 			);
 			path = BSPhotoBrowser;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				TargetAttributes = {
 					927729021F30305600D082C4 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 896998587B;
 						ProvisioningStyle = Automatic;
 					};
 					9277291B1F30305600D082C4 = {
@@ -392,6 +398,7 @@
 				9277296B1F3030A700D082C4 /* SDWebImageDownloaderOperation.m in Sources */,
 				927729741F3030A700D082C4 /* UIView+WebCacheOperation.m in Sources */,
 				9277290E1F30305600D082C4 /* ViewController.m in Sources */,
+				92FA3EF31F39A43900D58A7B /* BSPhotoBrowserHUD.m in Sources */,
 				9277296E1F3030A700D082C4 /* UIButton+WebCache.m in Sources */,
 				927729661F3030A700D082C4 /* NSData+ImageContentType.m in Sources */,
 				9277296D1F3030A700D082C4 /* SDWebImagePrefetcher.m in Sources */,
@@ -556,6 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 896998587B;
 				INFOPLIST_FILE = BSPhotoBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.powertorque.BSPhotoBrowser;
@@ -567,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 896998587B;
 				INFOPLIST_FILE = BSPhotoBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.powertorque.BSPhotoBrowser;
@@ -639,6 +648,7 @@
 				927729321F30305600D082C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		927729331F30305600D082C4 /* Build configuration list for PBXNativeTarget "BSPhotoBrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -647,6 +657,7 @@
 				927729351F30305600D082C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		927729361F30305600D082C4 /* Build configuration list for PBXNativeTarget "BSPhotoBrowserUITests" */ = {
 			isa = XCConfigurationList;
@@ -655,6 +666,7 @@
 				927729381F30305600D082C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,6 +10,7 @@
 
 @class BSPhoto;
 @class BSPhotoCell;
+@class BSPhotoBrowserHUD;
 
 @protocol BSPhotoCellDelegate <NSObject>
 
@@ -22,6 +23,7 @@
 
 @property (nonatomic, weak, readonly) UIScrollView *scrollView;
 @property (nonatomic, weak, readonly) UIImageView *imageView;
+@property (nonatomic, weak, readonly) BSPhotoBrowserHUD *hud;
 
 @property (nonatomic, strong) BSPhoto *photo;
 @property (nonatomic, weak) id<BSPhotoCellDelegate> delegate;
