@@ -9,7 +9,7 @@
 #import "BSPhotoBrowserHUD.h"
 
 #define kOutsideMargin 5.0f
-#define kInsideMargin 3.0f
+#define kInsideMargin 2.0f
 
 @implementation BSPhotoBrowserHUD
 

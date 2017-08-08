@@ -12,7 +12,7 @@
 #import "BSPhoto.h"
 #import "BSPhotoBrowserHUD.h"
 
-#define kHudWidth 60.0f
+#define kHudWidth 50.0f
 
 #define kMaxZoomScale 2.5f
 #define kMinZoomScale 1.0f
