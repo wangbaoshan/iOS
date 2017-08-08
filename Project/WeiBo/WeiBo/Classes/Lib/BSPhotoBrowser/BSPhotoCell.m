@@ -10,6 +10,9 @@
 
 #import "BSPhotoBrowser.h"
 #import "BSPhoto.h"
+#import "BSPhotoBrowserHUD.h"
+
+#define kHudWidth 60.0f
 
 #define kMaxZoomScale 2.5f
 #define kMinZoomScale 1.0f
@@ -27,7 +30,6 @@
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         scrollView.maximumZoomScale = kMaxZoomScale;
         scrollView.minimumZoomScale = kMinZoomScale;
-//        scrollView.decelerationRate = 0.5;
         scrollView.delegate = self;
         [self.contentView addSubview:scrollView];
         _scrollView = scrollView;
@@ -36,6 +38,12 @@
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.scrollView addSubview:imageView];
         _imageView = imageView;
+        
+        BSPhotoBrowserHUD *hud = [[BSPhotoBrowserHUD alloc] initWithFrame:CGRectMake((frame.size.width - kHudWidth) / 2, (frame.size.height - kHudWidth) / 2, kHudWidth, kHudWidth)];
+        hud.backgroundColor = [UIColor clearColor];
+        hud.hidden = YES;
+        [self.contentView addSubview:hud];
+        _hud = hud;
         
         UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap)];
         doubleTap.numberOfTapsRequired = 2;
@@ -70,12 +78,23 @@
 {
     _photo = photo;
     
+    self.hud.hidden = YES;
     self.scrollView.zoomScale = kMinZoomScale;
-    
     [self setupSubviewWithImage:photo.srcView.image];
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:photo.remoteUrlString] placeholderImage:photo.srcView.image completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:photo.remoteUrlString] placeholderImage:photo.srcView.image options:SDWebImageRetryFailed| SDWebImageLowPriority| SDWebImageHandleCookies progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
+        CGFloat progress = receivedSize * 1.0 / expectedSize;
+        if (progress >= 0.0 && progress <= 1) {
+            self.hud.hidden = NO;
+            self.hud.progress = progress;
+        } else {
+            self.hud.hidden = YES;
+        }
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+        self.hud.hidden = YES;
         [self setupSubviewWithImage:image];
         
     }];

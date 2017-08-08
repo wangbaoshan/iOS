@@ -25,11 +25,6 @@
 
 @implementation BSPhotoCell
 
-- (void)dealloc
-{
-    NSLog(@"BSPhotoCell-----dealloc");
-}
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
@@ -94,10 +89,10 @@
         CGFloat progress = receivedSize * 1.0 / expectedSize;
         if (progress >= 0.0 && progress <= 1) {
             self.hud.hidden = NO;
+            self.hud.progress = progress;
         } else {
             self.hud.hidden = YES;
         }
-        NSLog(@"receivedSize:%f", progress);
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.hud.hidden = YES;

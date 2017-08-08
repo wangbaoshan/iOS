@@ -169,6 +169,7 @@
 		927728F31F2DBCC600D082C4 /* BSPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 927728F21F2DBCC600D082C4 /* BSPhotoBrowser.m */; };
 		927728F61F2DCFC900D082C4 /* BSPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 927728F51F2DCFC900D082C4 /* BSPhotoCell.m */; };
 		927728F91F2E40AA00D082C4 /* BSPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 927728F81F2E40AA00D082C4 /* BSPhoto.m */; };
+		92FA3EF61F39B3BA00D58A7B /* BSPhotoBrowserHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FA3EF51F39B3BA00D58A7B /* BSPhotoBrowserHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,6 +518,8 @@
 		927728F51F2DCFC900D082C4 /* BSPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoCell.m; sourceTree = "<group>"; };
 		927728F71F2E40AA00D082C4 /* BSPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhoto.h; sourceTree = "<group>"; };
 		927728F81F2E40AA00D082C4 /* BSPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhoto.m; sourceTree = "<group>"; };
+		92FA3EF41F39B3BA00D58A7B /* BSPhotoBrowserHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoBrowserHUD.h; sourceTree = "<group>"; };
+		92FA3EF51F39B3BA00D58A7B /* BSPhotoBrowserHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoBrowserHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1378,6 +1381,8 @@
 				927728F51F2DCFC900D082C4 /* BSPhotoCell.m */,
 				927728F71F2E40AA00D082C4 /* BSPhoto.h */,
 				927728F81F2E40AA00D082C4 /* BSPhoto.m */,
+				92FA3EF41F39B3BA00D58A7B /* BSPhotoBrowserHUD.h */,
+				92FA3EF51F39B3BA00D58A7B /* BSPhotoBrowserHUD.m */,
 			);
 			path = BSPhotoBrowser;
 			sourceTree = "<group>";
@@ -1570,6 +1575,7 @@
 				92052BA51E891E6F00B67411 /* WBHomeTitleButton.m in Sources */,
 				92052A791E891DBB00B67411 /* main.m in Sources */,
 				92052C401E89227100B67411 /* MJRefreshHeader.m in Sources */,
+				92FA3EF61F39B3BA00D58A7B /* BSPhotoBrowserHUD.m in Sources */,
 				92052CB01E8925D000B67411 /* IQBarButtonItem.m in Sources */,
 				92052BD61E89215D00B67411 /* AFNetworkReachabilityManager.m in Sources */,
 				92052BD91E89215D00B67411 /* AFURLResponseSerialization.m in Sources */,
