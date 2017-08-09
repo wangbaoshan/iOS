@@ -23,12 +23,12 @@
 ### 集成图片浏览器，仿照新浪微博的点击看大图效果
 #### 集成方法
 #### - (void)tap:(UITapGestureRecognizer *)tapGes
-#### {
-#    ### UIImageView *imageView = (UIImageView *)tapGes.view;
-#    ### NSArray<NSString *> *urls = [self urls];  
-#    ### // 集成图片浏览器
-####    NSMutableArray<BSPhoto *> *photos = [NSMutableArray array];
-#    ### for (int i = 0; i < urls.count; i++) {
+{
+    UIImageView *imageView = (UIImageView *)tapGes.view;
+    NSArray<NSString *> *urls = [self urls];  
+    // 集成图片浏览器
+    NSMutableArray<BSPhoto *> *photos = [NSMutableArray array];
+    for (int i = 0; i < urls.count; i++) {
         BSPhoto *photo = [[BSPhoto alloc] init];
         photo.srcView = self.imageViews[i];
         photo.remoteUrlString = urls[i];
