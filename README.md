@@ -22,8 +22,8 @@
 ## Demo / BSPhotoBrowser
 ### 集成图片浏览器，仿照新浪微博的点击看大图效果
 #### 集成方法
-- (void)tap:(UITapGestureRecognizer *)tapGes
-{
+#### - (void)tap:(UITapGestureRecognizer *)tapGes
+#### {
     UIImageView *imageView = (UIImageView *)tapGes.view;
     NSArray<NSString *> *urls = [self urls];  
     // 集成图片浏览器
