@@ -18,7 +18,7 @@
 #### }
 
 
-## Demo / BSPhotoBrowser
+## Demo / BSPhotoBrowser  图片浏览器
 ### 集成图片浏览器，仿照新浪微博的点击看大图效果
 #### 集成方法
 #### - (void)tap:(UITapGestureRecognizer *)tapGes
@@ -38,5 +38,11 @@
 #### browser.currentIndex = imageView.tag;
 #### [browser showViewController:self];
 #### }
+
+
+## Demo / EmotionKeyboard  表情键盘
+## Demo / Player  视频播放
+## Demo / Http  二次封装AFNetworking
+## Demo / CommentCell  类似于微信朋友圈评论的效果
 
 
