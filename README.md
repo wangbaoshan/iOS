@@ -38,9 +38,5 @@
 #### browser.currentIndex = imageView.tag;
 #### [browser showViewController:self];
 #### }
-#### - (NSArray<NSString *> *)urls
-#### {
-#### return @[@"http://47.93.27.170:81/f99d16ed13334d94befe48ff93cc3c25.png", @"http://47.93.27.170:81/03b56adde87b468696871a38d695bc1f.png", @"http://47.93.27.170:81/e14e32e1c3814c25bace509ff5d981e3.png", @"http://47.93.27.170:81/ce927825d8b445a7b78d18481d601189.png", @"http://47.93.27.170:81/b03eacb40baf4d0280941828696d04e7.png"
-];
-#### }
+
 
