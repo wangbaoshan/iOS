@@ -41,8 +41,12 @@
 
 
 ## Demo / EmotionKeyboard  表情键盘
+#### 集成方法详见Demo / EmotionKeyboard
 ## Demo / Player  视频播放
+#### 集成方法详见Demo / Player
 ## Demo / Http  二次封装AFNetworking
+#### 详见Demo / Http
 ## Demo / CommentCell  类似于微信朋友圈评论的效果
+#### 详见Demo / CommentCell
 
 
