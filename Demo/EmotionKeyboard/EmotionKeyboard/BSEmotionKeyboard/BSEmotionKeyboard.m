@@ -207,6 +207,11 @@ NSString *const kEmotionKeyboardDidClickAddButton = @"kEmotionKeyboardDidClickAd
     self.pageControl.currentPage = indexPath.item;
 }
 
+- (void)reloadData
+{
+    [self.collectionView reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
