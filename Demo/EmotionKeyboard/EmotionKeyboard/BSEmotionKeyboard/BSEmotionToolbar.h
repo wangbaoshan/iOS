@@ -20,9 +20,12 @@
 @interface BSEmotionToolbar : UIView
 
 + (__kindof BSEmotionToolbar *)toolbar;
+
 - (void)addToolbarItem:(PTToolbarItem *)toolbarItem;
-- (void)removeAllItems;
-- (void)selectItemWithIndex:(NSInteger)index;
+- (void)removeAllToolbarItems;
+- (void)insertToolbarItem:(PTToolbarItem *)toolbarItem atIndex:(NSInteger)index;
+- (void)selectToolbarItemAtIndex:(NSInteger)index;
+- (void)removeToolbarItemAtIndex:(NSInteger)index;
 
 @property (nonatomic, weak) id<BSEmotionToolbarDelegate> delegate;
 @property (nonatomic, assign) NSInteger selectedIndex;

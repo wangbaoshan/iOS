@@ -12,7 +12,6 @@
 
 @interface BSEmotionKeyboardCell : UICollectionViewCell
 {
-    @protected
     BSEmotionItem *_item;
 }
 

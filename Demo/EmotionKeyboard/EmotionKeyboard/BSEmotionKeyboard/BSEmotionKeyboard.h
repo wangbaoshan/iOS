@@ -34,7 +34,12 @@ UIKIT_EXTERN NSString *const kEmotionKeyboardDidClickAddButton;
 /// 给键盘传递的模型数组
 @property (nonatomic, strong) NSArray<BSEmotionModel *> *emotionModels;
 
-///
+/// 刷新
 - (void)reloadData;
+
+/// Edit
+- (void)addEmotion:(BSEmotionModel *)emotionModel;
+- (void)insertEmotion:(BSEmotionModel *)emotionModel atIndex:(NSInteger)index;
+- (void)removeEmotionAtIndex:(NSInteger)index;
 
 @end

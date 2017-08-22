@@ -24,7 +24,7 @@ static const char kNSTextAttachmentChs;
 @property (nonatomic, weak) UITextView *textView;
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) BSEmotionKeyboard *emotionKeyboard;
-
+@property (nonatomic, strong) NSMutableArray<BSEmotionModel *> *models;
 @property (nonatomic, strong) NSMutableArray<NSString *> *texts;
 
 @end
@@ -44,50 +44,53 @@ static const char kNSTextAttachmentChs;
     return _texts;
 }
 
+- (NSMutableArray<BSEmotionModel *> *)models
+{
+    if (!_models) {
+        _models = [NSMutableArray arrayWithCapacity:0];
+        
+        BSEmotionModel *model0 = [[BSEmotionModel alloc] init];
+        model0.emotionType = BSEmotionType_SmallPicture;
+        model0.plistDirectory = @"EmotionIcons/default/info.plist";
+        model0.directory = @"EmotionIcons/default";
+        PTToolbarItem *item0 = [[PTToolbarItem alloc] init];
+        item0.indexTextString = @"默认";
+        model0.toolbarItem = item0;
+        [_models addObject:model0];
+        
+        BSEmotionModel *model1 = [[BSEmotionModel alloc] init];
+        model1.emotionType = BSEmotionType_Emoji;
+        model1.plistDirectory = @"EmotionIcons/emoji/info.plist";
+        model1.directory = @"EmotionIcons/emoji";
+        PTToolbarItem *item1 = [[PTToolbarItem alloc] init];
+        item1.indexTextString = @"emoji";
+        model1.toolbarItem = item1;
+        [_models addObject:model1];
+        
+        BSEmotionModel *model2 = [[BSEmotionModel alloc] init];
+        model2.emotionType = BSEmotionType_SmallPicture;
+        model2.plistDirectory = @"EmotionIcons/lxh/info.plist";
+        model2.directory = @"EmotionIcons/lxh";
+        PTToolbarItem *item2 = [[PTToolbarItem alloc] init];
+        item2.indexTextString = @"浪小花";
+        model2.toolbarItem = item2;
+        [_models addObject:model2];
+
+    }
+    return _models;
+}
+
 - (BSEmotionKeyboard *)emotionKeyboard
 {
     if (!_emotionKeyboard) {
         // 初始化键盘
         [BSEmotionKeyboard setKeyboardHeight:kDIYKeyboardHeight];
         _emotionKeyboard = [BSEmotionKeyboard emotionKeyboard];
-        _emotionKeyboard.emotionModels = [self createEmotionData];
+        _emotionKeyboard.emotionModels = self.models;
     }
     return _emotionKeyboard;
 }
 
-/// 创建BSEmotionKeyboard数据的方法
-- (NSArray<BSEmotionModel *> *)createEmotionData
-{
-    NSMutableArray<BSEmotionModel *> *models = [NSMutableArray array];
-    BSEmotionModel *model0 = [[BSEmotionModel alloc] init];
-    model0.emotionType = BSEmotionType_SmallPicture;
-    model0.plistDirectory = @"EmotionIcons/default/info.plist";
-    model0.directory = @"EmotionIcons/default";
-    PTToolbarItem *item0 = [[PTToolbarItem alloc] init];
-    item0.indexTextString = @"默认";
-    model0.toolbarItem = item0;
-    [models addObject:model0];
-    
-    BSEmotionModel *model1 = [[BSEmotionModel alloc] init];
-    model1.emotionType = BSEmotionType_Emoji;
-    model1.plistDirectory = @"EmotionIcons/emoji/info.plist";
-    model1.directory = @"EmotionIcons/emoji";
-    PTToolbarItem *item1 = [[PTToolbarItem alloc] init];
-    item1.indexTextString = @"emoji";
-    model1.toolbarItem = item1;
-    [models addObject:model1];
-    
-    BSEmotionModel *model2 = [[BSEmotionModel alloc] init];
-    model2.emotionType = BSEmotionType_SmallPicture;
-    model2.plistDirectory = @"EmotionIcons/lxh/info.plist";
-    model2.directory = @"EmotionIcons/lxh";
-    PTToolbarItem *item2 = [[PTToolbarItem alloc] init];
-    item2.indexTextString = @"浪小花";
-    model2.toolbarItem = item2;
-    [models addObject:model2];
-
-    return models;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -163,6 +166,33 @@ static const char kNSTextAttachmentChs;
 - (void)clickAddButton:(NSNotification *)noti
 {
     NSLog(@"add emotion");
+    
+    /// 创建BSEmotionKeyboard数据的方法
+//    BSEmotionModel *model1 = [[BSEmotionModel alloc] init];
+//    model1.emotionType = BSEmotionType_Emoji;
+//    model1.plistDirectory = @"EmotionIcons/emoji/info.plist";
+//    model1.directory = @"EmotionIcons/emoji";
+//    PTToolbarItem *item1 = [[PTToolbarItem alloc] init];
+//    item1.indexTextString = @"emoji";
+//    model1.toolbarItem = item1;
+//    [self.emotionKeyboard addEmotion:model1];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//    });
+    
+//    [self.emotionKeyboard removeEmotionAtIndex:self.emotionKeyboard.emotionModels.count - 1];
+    [self.emotionKeyboard removeEmotionAtIndex:0];
+    
+
+//    BSEmotionModel *model2 = [[BSEmotionModel alloc] init];
+//    model2.emotionType = BSEmotionType_SmallPicture;
+//    model2.plistDirectory = @"EmotionIcons/lxh/info.plist";
+//    model2.directory = @"EmotionIcons/lxh";
+//    PTToolbarItem *item2 = [[PTToolbarItem alloc] init];
+//    item2.indexTextString = @"浪小花";
+//    model2.toolbarItem = item2;
+//    [models addObject:model2];
 }
 
 - (void)clickSendButton:(NSNotification *)noti

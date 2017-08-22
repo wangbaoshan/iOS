@@ -99,26 +99,6 @@ static CGFloat const kButtonItemW = 50.0f;
 //    [[NSNotificationCenter defaultCenter] postNotificationName:kEmotionKeyboardDidClickAddButton object:nil];
 }
 
-- (void)addToolbarItem:(PTToolbarItem *)toolbarItem
-{
-    UIButton *buttonItem = [self createButtonItem];
-    if (toolbarItem.indexImageString) {
-        [buttonItem setImage:[UIImage imageNamed:toolbarItem.indexImageString] forState:UIControlStateNormal];
-    } else if (toolbarItem.indexTextString) {
-        [buttonItem setTitle:toolbarItem.indexTextString forState:UIControlStateNormal];
-    } else {
-        
-    }
-    [self.scrollView addSubview:buttonItem];
-    [self.buttonItems addObject:buttonItem];
-    
-    [self setupButtonItems];
-    
-    if (self.buttonItems.count == 1) {
-        [self buttonClick:buttonItem];
-    }
-}
-
 - (UIButton *)createButtonItem
 {
     UIButton *buttonItem = [[UIButton alloc] init];
@@ -156,7 +136,7 @@ static CGFloat const kButtonItemW = 50.0f;
     [self setupButtonItems];
 }
 
-- (void)removeAllItems
+- (void)removeAllToolbarItems
 {
     [self.buttonItems makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.buttonItems removeAllObjects];
@@ -174,14 +154,49 @@ static CGFloat const kButtonItemW = 50.0f;
     self.scrollView.contentSize = CGSizeMake(totalW, 0);
 }
 
-- (void)selectItemWithIndex:(NSInteger)index
+- (void)selectToolbarItemAtIndex:(NSInteger)index
 {
-    if (self.buttonItems.count - 1 < index) return;
-    
     UIButton *button = [self.buttonItems objectAtIndex:index];
-    self.selectedButton.selected = NO;
-    button.selected = YES;
-    self.selectedButton = button;
+    [self buttonClick:button];
+}
+
+- (void)addToolbarItem:(PTToolbarItem *)toolbarItem
+{
+    UIButton *buttonItem = [self createButtonItem];
+    if (toolbarItem.indexImageString) {
+        [buttonItem setImage:[UIImage imageNamed:toolbarItem.indexImageString] forState:UIControlStateNormal];
+    } else if (toolbarItem.indexTextString) {
+        [buttonItem setTitle:toolbarItem.indexTextString forState:UIControlStateNormal];
+    } else {
+        
+    }
+    [self.scrollView addSubview:buttonItem];
+    [self.buttonItems addObject:buttonItem];
+    
+    [self setupButtonItems];
+}
+
+- (void)insertToolbarItem:(PTToolbarItem *)toolbarItem atIndex:(NSInteger)index
+{
+    UIButton *buttonItem = [self createButtonItem];
+    if (toolbarItem.indexImageString) {
+        [buttonItem setImage:[UIImage imageNamed:toolbarItem.indexImageString] forState:UIControlStateNormal];
+    } else if (toolbarItem.indexTextString) {
+        [buttonItem setTitle:toolbarItem.indexTextString forState:UIControlStateNormal];
+    } else {
+        
+    }
+    [self.scrollView insertSubview:buttonItem atIndex:index];
+    [self.buttonItems insertObject:buttonItem atIndex:index];
+    
+    [self setupButtonItems];
+}
+
+- (void)removeToolbarItemAtIndex:(NSInteger)index
+{
+    [[self.buttonItems objectAtIndex:index] removeFromSuperview];
+    [self.buttonItems removeObjectAtIndex:index];
+    [self setupButtonItems];
 }
 
 
