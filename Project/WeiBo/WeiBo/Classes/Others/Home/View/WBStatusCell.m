@@ -51,7 +51,7 @@
     
     WBStatusToolBar *toolBar = [WBStatusToolBar statusToolBar];
     toolBar.backgroundColor = kCSSHexColor(@"#FFFFFF");
-    toolBar.layer.borderWidth = 0.4;
+    toolBar.layer.borderWidth = 0.5;
     toolBar.layer.borderColor = kCSSHexColor(@"#DDDDDD").CGColor;
     [self.contentView addSubview:toolBar];
     self.toolBar = toolBar;

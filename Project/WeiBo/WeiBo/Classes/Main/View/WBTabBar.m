@@ -61,14 +61,14 @@
         [_plusButton setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
         [_plusButton setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
         [_plusButton setImage:[UIImage imageNamed:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
-        [_plusButton addTarget:self action:@selector(addWeiBo:) forControlEvents:UIControlEventTouchUpInside];
+        [_plusButton addTarget:self action:@selector(sendWeiBo:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:_plusButton];
     }
     return _plusButton;
 }
 
-- (void)addWeiBo:(UIButton *)plusButton
+- (void)sendWeiBo:(UIButton *)plusButton
 {
     if ([self.delegate respondsToSelector:@selector(tabBar:didClickPlusButton:)]) {
         [self.delegate tabBar:self didClickPlusButton:plusButton];

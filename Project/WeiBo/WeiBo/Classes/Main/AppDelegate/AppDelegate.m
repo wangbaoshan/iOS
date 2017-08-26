@@ -60,8 +60,6 @@
     
     // 清除内存缓存
     [sdManager.imageCache clearMemory];
-    
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

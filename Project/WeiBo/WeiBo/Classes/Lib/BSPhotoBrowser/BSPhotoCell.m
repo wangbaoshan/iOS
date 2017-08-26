@@ -82,7 +82,8 @@
     self.scrollView.zoomScale = kMinZoomScale;
     [self setupSubviewWithImage:photo.srcView.image];
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:photo.remoteUrlString] placeholderImage:photo.srcView.image options:SDWebImageRetryFailed| SDWebImageLowPriority| SDWebImageHandleCookies progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+    // SDWebImageRetryFailed| SDWebImageLowPriority| SDWebImageHandleCookies
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:photo.remoteUrlString] placeholderImage:photo.srcView.image options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
         CGFloat progress = receivedSize * 1.0 / expectedSize;
         if (progress >= 0.0 && progress <= 1) {

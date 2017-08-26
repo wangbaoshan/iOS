@@ -700,14 +700,14 @@
 		92052AD21E891E6E00B67411 /* HttpBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				92052AD91E891E6E00B67411 /* WBNetAPIBusiness.h */,
+				92052ADA1E891E6E00B67411 /* WBNetAPIBusiness.m */,
 				92052AD31E891E6E00B67411 /* WBBaseAPIParameter.h */,
 				92052AD41E891E6E00B67411 /* WBBaseAPIParameter.m */,
 				92052AD51E891E6E00B67411 /* WBHomeStatusesParamter.h */,
 				92052AD61E891E6E00B67411 /* WBHomeStatusesParamter.m */,
 				92052AD71E891E6E00B67411 /* WBHomeStatusesResult.h */,
 				92052AD81E891E6E00B67411 /* WBHomeStatusesResult.m */,
-				92052AD91E891E6E00B67411 /* WBNetAPIBusiness.h */,
-				92052ADA1E891E6E00B67411 /* WBNetAPIBusiness.m */,
 				92052ADB1E891E6E00B67411 /* WBPublicStatusesParamter.h */,
 				92052ADC1E891E6E00B67411 /* WBPublicStatusesParamter.m */,
 				92052ADD1E891E6E00B67411 /* WBPublicStatusesResult.h */,

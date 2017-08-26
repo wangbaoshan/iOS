@@ -16,9 +16,10 @@
 
 @interface WBNetAPIBusiness : NSObject
 
+/// 返回当前用户的个人信息
++ (void)currentUserContent:(WBUserContentParamter *)paramter completion:(void(^)(WBUserContentResult *result, NSError *error))completion;
 
-+ (void)currentUserContent:(WBUserContentParamter *)paramter completion:(void(^)(WBUserContentResult *result, NSError *error))completion; // 返回当前用户的个人信息
-
-+ (void)homeStatuses:(WBHomeStatusesParamter *)paramter completion:(void(^)(WBHomeStatusesResult *result, NSError *error))completion; // 返回当前用户的最新的微博
+/// 返回当前用户的最新的微博
++ (void)homeStatuses:(WBHomeStatusesParamter *)paramter completion:(void(^)(WBHomeStatusesResult *result, NSError *error))completion;
 
 @end
