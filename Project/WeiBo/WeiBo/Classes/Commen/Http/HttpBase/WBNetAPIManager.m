@@ -19,7 +19,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _netAPIManager = [[WBNetAPIManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseAPIUrlString]];
-        _netAPIManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json", @"text/html", nil];
+        _netAPIManager.responseSerializer.acceptableContentTypes = [_netAPIManager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
         _netAPIManager.requestSerializer.timeoutInterval = kTimeOutInterval;
 
     });
