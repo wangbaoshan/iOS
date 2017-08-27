@@ -18,3 +18,5 @@ NSString *const kCurrentUserWeiBoUrlString = @"2/statuses/home_timeline.json";
 NSString *const kPublicWeiBoUrlString = @"2/statuses/public_timeline.json";
 
 NSString *const kCurrentUserContentUrlString = @"2/users/show.json";
+
+NSString *const kMyFunsUrlString = @"2/friendships/followers.json";

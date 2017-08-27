@@ -7,12 +7,11 @@
 //
 
 #import "WBMeDetailViewController.h"
-#import "WBReturnDefaultButton.h"
 #import "WBAccountTool.h"
 #import "WBAccount.h"
 #import "WBUser.h"
 
-static CGFloat const kHeaderViewHeight = 150.0f;
+static CGFloat const kHeaderViewHeight = 170.0f;
 static CGFloat const kChangStatusY = 80.0f;
 
 @interface WBMeDetailViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
@@ -65,7 +64,6 @@ static CGFloat const kChangStatusY = 80.0f;
 {
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = [WBAccountTool account].user.name;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[WBReturnDefaultButton returnDefaultButtonWithTarget:self title:self.backBarItemString action:@selector(back)]];
     UIBarButtonItem *rightBarButtonItemSearch = [UIBarButtonItem itemWithImageName:@"userinfo_tabicon_search" highlightImageName:@"userinfo_tabicon_search_highlighted" target:self action:@selector(search)];
     UIBarButtonItem *rightBarButtonItemMore = [UIBarButtonItem itemWithImageName:@"userinfo_tabicon_more" highlightImageName:@"userinfo_tabicon_more_highlighted" target:self action:@selector(more)];
     self.navigationItem.rightBarButtonItems = @[rightBarButtonItemMore, rightBarButtonItemSearch];
@@ -97,11 +95,6 @@ static CGFloat const kChangStatusY = 80.0f;
 - (void)more
 {
     
-}
-
-- (void)back
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -137,12 +130,12 @@ static CGFloat const kChangStatusY = 80.0f;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50;
+    return 44;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 50)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
     view.backgroundColor = [UIColor lightGrayColor];
     return view;
 }
@@ -152,7 +145,7 @@ static CGFloat const kChangStatusY = 80.0f;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat y = self.tableView.contentOffset.y;
-    NSLog(@"%f", y);
+//    NSLog(@"%f", y);
     
     if (y <= 0) {
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(kHeaderViewHeight - y, 0, 0, 0);

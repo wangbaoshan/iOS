@@ -28,7 +28,7 @@
     
     if (retweetedStatus.pic_urls.count) {
         CGSize photosSize = [WBStatusPhotosView sizeWithMaxWidth:maxW maxCount:retweetedStatus.pic_urls.count margin:kStatusThumbPictureMargin];
-        self.photosFrame = (CGRect){{textX, CGRectGetMaxY(self.retweetTextFrame) + kStatusCellInset * 0.5}, photosSize};
+        self.photosFrame = (CGRect){{textX, CGRectGetMaxY(self.retweetTextFrame) + kStatusCellInset * 0.8}, photosSize};
     } else {
         self.photosFrame = (CGRect){{textX, CGRectGetMaxY(self.retweetTextFrame)}, CGSizeZero};
     }

@@ -9,6 +9,7 @@
 #import "WBNavigationController.h"
 
 #import "WBReturnDefaultButton.h"
+#import "WBBaseViewController.h"
 
 @interface WBNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
@@ -21,6 +22,7 @@
 + (void)initialize
 {
     [super initialize];
+    
     // 设置UINavigationBarTheme的主题
     [self setupNavigationBarTheme];
     
@@ -92,7 +94,14 @@
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;
         // 设置导航栏返回按钮样式
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[WBReturnDefaultButton returnDefaultButtonWithTarget:self title:nil action:@selector(back)]];
+        NSString *returnString = @"返回";
+        if ([viewController isKindOfClass:[WBBaseViewController class]]) {
+            WBBaseViewController *baseVC = (WBBaseViewController *)viewController;
+            if (baseVC.backBarItemString) {
+                returnString = [baseVC.backBarItemString copy];
+            }
+        }
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[WBReturnDefaultButton returnDefaultButtonWithTarget:self title:returnString action:@selector(back)]];
     }
     [super pushViewController:viewController animated:animated];
 }

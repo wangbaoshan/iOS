@@ -19,6 +19,7 @@
 #import "WBMeGroup.h"
 #import "WBMeItem.h"
 #import "WBMeCell.h"
+#import "WBMyFunsViewController.h"
 
 @interface WBMeViewController () <UITableViewDataSource, UITableViewDelegate, WBMeHeaderViewDelegate>
 
@@ -155,7 +156,9 @@
 
 - (void)meFuns
 {
-    
+    WBMyFunsViewController *myFunsVC = [[WBMyFunsViewController alloc] init];
+    myFunsVC.backBarItemString = [self.navigationItem.title copy];
+    [self.navigationController pushViewController:myFunsVC animated:YES];
 }
 
 

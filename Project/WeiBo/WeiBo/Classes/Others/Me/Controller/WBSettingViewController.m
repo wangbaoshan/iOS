@@ -8,7 +8,6 @@
 
 #import "WBSettingViewController.h"
 
-#import "WBReturnDefaultButton.h"
 #import "WBMeLoginOutFooterView.h"
 #import "WBMeGroup.h"
 #import "WBMeItem.h"
@@ -48,7 +47,6 @@
 - (void)loadUI
 {
     self.navigationItem.title = @"设置";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[WBReturnDefaultButton returnDefaultButtonWithTarget:self title:self.backBarItemString action:@selector(back)]];
     
     [self createDataSource];
     
@@ -113,11 +111,6 @@
     item24.type = WBMeItemTypeArrow;
     group2.items = @[item20, item21, item22, item23, item24];
     [self.groups addObject:group2];
-}
-
-- (void)back
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - WBMeLoginOutFooterViewDelegate

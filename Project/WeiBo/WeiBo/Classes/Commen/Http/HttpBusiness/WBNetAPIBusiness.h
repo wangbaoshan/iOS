@@ -14,6 +14,9 @@
 @class WBUserContentParamter;
 @class WBUserContentResult;
 
+@class WBMyFunsParameter;
+@class WBMyFunsResult;
+
 @interface WBNetAPIBusiness : NSObject
 
 /// 返回当前用户的个人信息
@@ -21,5 +24,9 @@
 
 /// 返回当前用户的最新的微博
 + (void)homeStatuses:(WBHomeStatusesParamter *)paramter completion:(void(^)(WBHomeStatusesResult *result, NSError *error))completion;
+
+/// 返回当前用户的粉丝列表
++ (void)myFuns:(WBMyFunsParameter *)paramter completion:(void(^)(WBMyFunsResult *result, NSError *error))completion;
+
 
 @end

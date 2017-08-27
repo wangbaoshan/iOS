@@ -33,6 +33,8 @@
 
 - (NSURLSessionTask *)requestWithURL:(NSString *)urlString parameters:(NSMutableDictionary *)parameters method:(WBNetMethod)method completion:(void (^)(id, NSError *))completion
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
     NSURLSessionTask *sessionTask = nil;
     
 #ifdef DEBUG
@@ -57,6 +59,8 @@
                     completion(responseObject, nil);
                 }
                 
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
 #ifdef DEBUG
@@ -66,6 +70,8 @@
                 if (completion) {
                     completion(@"error", error);
                 }
+                
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                 
             }];
         }
@@ -88,6 +94,8 @@
                     completion(responseObject, nil);
                 }
                 
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
 #ifdef DEBUG
@@ -98,6 +106,7 @@
                     completion(@"error", error);
                 }
                 
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             }];
         }
             break;
@@ -117,6 +126,8 @@
                     completion(responseObject, nil);
                 }
                 
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
 #ifdef DEBUG
@@ -127,11 +138,16 @@
                     completion(@"error", error);
                 }
                 
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                
             }];
         }
             break;
             
         default:
+        {
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        }
             break;
     }
     return sessionTask;

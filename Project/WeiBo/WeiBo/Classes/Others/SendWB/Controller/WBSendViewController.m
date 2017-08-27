@@ -180,7 +180,7 @@
     
     [self.textView resignFirstResponder]; // 关闭键盘
     
-//    self.changingKeyboardEmotion = NO;
+    self.changingKeyboardEmotion = NO;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.textView becomeFirstResponder]; // 打开键盘
@@ -209,7 +209,7 @@
     
     [self.textView resignFirstResponder]; // 关闭键盘
     
-//    self.changingKeyboardMore = NO;
+    self.changingKeyboardMore = NO;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.textView becomeFirstResponder]; // 打开键盘

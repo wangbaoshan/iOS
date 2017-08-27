@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39DDB7AF1F53095A00AA4354 /* WBMyFunsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7AE1F53095A00AA4354 /* WBMyFunsViewController.m */; };
+		39DDB7B21F53110900AA4354 /* WBMyFunsParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7B11F53110900AA4354 /* WBMyFunsParameter.m */; };
+		39DDB7B51F53180100AA4354 /* WBMyFuns.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7B41F53180100AA4354 /* WBMyFuns.m */; };
+		39DDB7B81F53287800AA4354 /* WBMyFunsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7B71F53287800AA4354 /* WBMyFunsResult.m */; };
 		92052A791E891DBB00B67411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92052A781E891DBB00B67411 /* main.m */; };
 		92052A871E891DBB00B67411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92052A851E891DBB00B67411 /* LaunchScreen.storyboard */; };
 		92052A921E891DBC00B67411 /* WeiBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92052A911E891DBC00B67411 /* WeiBoTests.m */; };
@@ -190,6 +194,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39DDB7AD1F53095A00AA4354 /* WBMyFunsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunsViewController.h; sourceTree = "<group>"; };
+		39DDB7AE1F53095A00AA4354 /* WBMyFunsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFunsViewController.m; sourceTree = "<group>"; };
+		39DDB7B01F53110900AA4354 /* WBMyFunsParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunsParameter.h; sourceTree = "<group>"; };
+		39DDB7B11F53110900AA4354 /* WBMyFunsParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFunsParameter.m; sourceTree = "<group>"; };
+		39DDB7B31F53180100AA4354 /* WBMyFuns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFuns.h; sourceTree = "<group>"; };
+		39DDB7B41F53180100AA4354 /* WBMyFuns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFuns.m; sourceTree = "<group>"; };
+		39DDB7B61F53287800AA4354 /* WBMyFunsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunsResult.h; sourceTree = "<group>"; };
+		39DDB7B71F53287800AA4354 /* WBMyFunsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFunsResult.m; sourceTree = "<group>"; };
 		92052A741E891DBB00B67411 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92052A781E891DBB00B67411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92052A861E891DBB00B67411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -716,6 +728,10 @@
 				92052AE01E891E6E00B67411 /* WBUserContentParamter.m */,
 				92052AE11E891E6E00B67411 /* WBUserContentResult.h */,
 				92052AE21E891E6E00B67411 /* WBUserContentResult.m */,
+				39DDB7B01F53110900AA4354 /* WBMyFunsParameter.h */,
+				39DDB7B11F53110900AA4354 /* WBMyFunsParameter.m */,
+				39DDB7B61F53287800AA4354 /* WBMyFunsResult.h */,
+				39DDB7B71F53287800AA4354 /* WBMyFunsResult.m */,
 			);
 			path = HttpBusiness;
 			sourceTree = "<group>";
@@ -968,12 +984,14 @@
 		92052B421E891E6F00B67411 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				92052B471E891E6F00B67411 /* WBMeViewController.h */,
+				92052B481E891E6F00B67411 /* WBMeViewController.m */,
+				39DDB7AD1F53095A00AA4354 /* WBMyFunsViewController.h */,
+				39DDB7AE1F53095A00AA4354 /* WBMyFunsViewController.m */,
 				92052B431E891E6F00B67411 /* WBAddFriendsViewController.h */,
 				92052B441E891E6F00B67411 /* WBAddFriendsViewController.m */,
 				92052B451E891E6F00B67411 /* WBMeDetailViewController.h */,
 				92052B461E891E6F00B67411 /* WBMeDetailViewController.m */,
-				92052B471E891E6F00B67411 /* WBMeViewController.h */,
-				92052B481E891E6F00B67411 /* WBMeViewController.m */,
 				92052B491E891E6F00B67411 /* WBSettingViewController.h */,
 				92052B4A1E891E6F00B67411 /* WBSettingViewController.m */,
 			);
@@ -987,6 +1005,8 @@
 				92052B4D1E891E6F00B67411 /* WBMeGroup.m */,
 				92052B4E1E891E6F00B67411 /* WBMeItem.h */,
 				92052B4F1E891E6F00B67411 /* WBMeItem.m */,
+				39DDB7B31F53180100AA4354 /* WBMyFuns.h */,
+				39DDB7B41F53180100AA4354 /* WBMyFuns.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1554,6 +1574,7 @@
 				92052C481E89227100B67411 /* MJRefreshNormalHeader.m in Sources */,
 				92052CA71E8925D000B67411 /* IQNSArray+Sort.m in Sources */,
 				92052C811E89253800B67411 /* UIView+WebCacheOperation.m in Sources */,
+				39DDB7B81F53287800AA4354 /* WBMyFunsResult.m in Sources */,
 				92052C0A1E89226A00B67411 /* NSObject+MJKeyValue.m in Sources */,
 				92052C3D1E89227100B67411 /* MJRefreshBackFooter.m in Sources */,
 				92052C7F1E89253800B67411 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1567,6 +1588,7 @@
 				92052BB11E891E6F00B67411 /* WBAddFriendsViewController.m in Sources */,
 				92052BAF1E891E6F00B67411 /* WBAccount.m in Sources */,
 				92052C4B1E89227100B67411 /* MJRefreshConst.m in Sources */,
+				39DDB7B21F53110900AA4354 /* WBMyFunsParameter.m in Sources */,
 				92052CB21E8925D000B67411 /* IQTitleBarButtonItem.m in Sources */,
 				92052C421E89227100B67411 /* MJRefreshAutoNormalFooter.m in Sources */,
 				92052B951E891E6F00B67411 /* WBDiscoverViewController.m in Sources */,
@@ -1580,9 +1602,11 @@
 				92052BD91E89215D00B67411 /* AFURLResponseSerialization.m in Sources */,
 				92052C7C1E89253800B67411 /* UIImage+GIF.m in Sources */,
 				92052B801E891E6F00B67411 /* WBNetAPILoger.m in Sources */,
+				39DDB7AF1F53095A00AA4354 /* WBMyFunsViewController.m in Sources */,
 				92052CB41E8925D000B67411 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				92052B7A1E891E6F00B67411 /* SVProgressHUD+Tips.m in Sources */,
 				92052BC31E891E6F00B67411 /* WBSendToolBar.m in Sources */,
+				39DDB7B51F53180100AA4354 /* WBMyFuns.m in Sources */,
 				92052C051E89226A00B67411 /* MJProperty.m in Sources */,
 				927728F61F2DCFC900D082C4 /* BSPhotoCell.m in Sources */,
 				92052CAA1E8925D000B67411 /* IQUIView+Hierarchy.m in Sources */,
@@ -1818,13 +1842,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiBo/PrefixHeader.pch";
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.powertorque.WeiBo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaomaolv.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1837,8 +1863,9 @@
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.powertorque.WeiBo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaomaolv.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

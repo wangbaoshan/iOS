@@ -25,6 +25,7 @@
 
 + (void)initialize
 {
+    [super initialize];
     [self setupTabBarTheme];
     [self setupTabBarItemTheme];
 }
@@ -80,7 +81,7 @@
     tabBarNew.delegate = self;
     [self setValue:tabBarNew forKey:@"tabBar"];
     
-    self.selectedIndex = 3;
+//    self.selectedIndex = 3;
 }
 
 /** 添加子控制器 */
