@@ -12,6 +12,7 @@
 #import "WBStatus.h"
 
 @interface WBMyFunCell ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
@@ -60,6 +61,7 @@
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:myFun.avatar_large] placeholderImage:[UIImage imageNamed:@"sign-up_avatar_default"]];
     self.contentLabel.text = myFun.status.text;
     self.attentioned = myFun.following;
+    self.sourceLabel.text = myFun.status.source;
 }
 
 - (void)setAttentioned:(BOOL)attentioned

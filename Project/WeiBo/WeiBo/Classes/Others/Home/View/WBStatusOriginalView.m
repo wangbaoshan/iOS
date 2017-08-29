@@ -54,11 +54,13 @@
     
     UILabel *timeLabel = [[UILabel alloc] init];
     timeLabel.textColor = kStatusTimeColor;
+    timeLabel.font = kStatusOrginalTimeFont;
     [self addSubview:timeLabel];
     self.timeLabel = timeLabel;
     
     UILabel *sourceLabel = [[UILabel alloc] init];
     sourceLabel.textColor = kStatusSourceColor;
+    sourceLabel.font = kStatusOrginalSourceFont;
     [self addSubview:sourceLabel];
     self.sourceLabel = sourceLabel;
     
@@ -87,6 +89,18 @@
     
     self.nameLabel.frame = originalFrame.nameFrame;
     self.nameLabel.text = status.user.name;
+    
+    // 重新计算time和source的frame
+    NSString *time = status.created_at;
+    CGSize timeSize = [time sizeWithAttributes:@{NSFontAttributeName:kStatusOrginalTimeFont}];
+    CGRect timeFrame = (CGRect){{originalFrame.timeFrame.origin.x, originalFrame.timeFrame.origin.y}, timeSize};
+    CGRect sourceFrame = (CGRect){{CGRectGetMaxX(timeFrame) + kStatusCellInset * 0.5, originalFrame.sourceFrame.origin.y}, originalFrame.sourceFrame.size};
+    
+    self.timeLabel.frame = timeFrame;
+    self.timeLabel.text = time;
+    
+    self.sourceLabel.frame = sourceFrame;
+    self.sourceLabel.text = status.source;
     
     self.textLabel.frame = originalFrame.textFrame;
     self.textLabel.text = status.text;

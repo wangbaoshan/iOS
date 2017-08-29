@@ -61,6 +61,8 @@
 #define kStatusThumbPictureMargin 6.0
 
 #define kStatusOrginalNameFont [UIFont systemFontOfSize:16.5]
+#define kStatusOrginalTimeFont [UIFont systemFontOfSize:13.0]
+#define kStatusOrginalSourceFont kStatusOrginalTimeFont
 #define kStatusOrginalTextFont [UIFont systemFontOfSize:16.5]
 #define kStatusRetweetedTextFont [UIFont systemFontOfSize:15.5]
 

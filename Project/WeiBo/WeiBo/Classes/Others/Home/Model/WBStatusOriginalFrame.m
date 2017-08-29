@@ -32,6 +32,16 @@
     CGSize nameSize = [status.user.name sizeWithAttributes:@{NSFontAttributeName:kStatusOrginalNameFont}];
     self.nameFrame = (CGRect){{nameX, nameY}, nameSize};
     
+    CGFloat timeX = nameX;
+    CGSize timeSize = [status.created_at sizeWithAttributes:@{NSFontAttributeName:kStatusOrginalTimeFont}];
+    CGFloat timeY = CGRectGetMaxY(self.iconFrame) - timeSize.height;
+    self.timeFrame = (CGRect){{timeX, timeY}, timeSize};
+    
+    CGFloat sourceX = CGRectGetMaxX(self.timeFrame) + kStatusCellInset * 0.5;
+    CGFloat sourceY = timeY;
+    CGSize sourceSize = [status.source sizeWithAttributes:@{NSFontAttributeName:kStatusOrginalSourceFont}];
+    self.sourceFrame = (CGRect){{sourceX, sourceY}, sourceSize};
+    
     CGFloat textX = iconX;
     CGFloat textY = CGRectGetMaxY(self.iconFrame) + kStatusCellInset;
     CGFloat maxW = w - 2 * textX;

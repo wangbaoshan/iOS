@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		397F4CE41F544B5D00CB8036 /* WBMyFunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F4CE21F544B5D00CB8036 /* WBMyFunCell.m */; };
 		397F4CE51F544B5D00CB8036 /* WBMyFunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397F4CE31F544B5D00CB8036 /* WBMyFunCell.xib */; };
+		397F4CE81F55578000CB8036 /* NSDate+YTT.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F4CE71F55578000CB8036 /* NSDate+YTT.m */; };
 		39DDB7AF1F53095A00AA4354 /* WBMyFunsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7AE1F53095A00AA4354 /* WBMyFunsViewController.m */; };
 		39DDB7B21F53110900AA4354 /* WBMyFunsParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7B11F53110900AA4354 /* WBMyFunsParameter.m */; };
 		39DDB7B51F53180100AA4354 /* WBMyFuns.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7B41F53180100AA4354 /* WBMyFuns.m */; };
@@ -199,6 +200,8 @@
 		397F4CE11F544B5D00CB8036 /* WBMyFunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunCell.h; sourceTree = "<group>"; };
 		397F4CE21F544B5D00CB8036 /* WBMyFunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFunCell.m; sourceTree = "<group>"; };
 		397F4CE31F544B5D00CB8036 /* WBMyFunCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBMyFunCell.xib; sourceTree = "<group>"; };
+		397F4CE61F55578000CB8036 /* NSDate+YTT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YTT.h"; sourceTree = "<group>"; };
+		397F4CE71F55578000CB8036 /* NSDate+YTT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YTT.m"; sourceTree = "<group>"; };
 		39DDB7AD1F53095A00AA4354 /* WBMyFunsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunsViewController.h; sourceTree = "<group>"; };
 		39DDB7AE1F53095A00AA4354 /* WBMyFunsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFunsViewController.m; sourceTree = "<group>"; };
 		39DDB7B01F53110900AA4354 /* WBMyFunsParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunsParameter.h; sourceTree = "<group>"; };
@@ -673,6 +676,8 @@
 				92052ABE1E891E6E00B67411 /* UIImage+BS.m */,
 				92052ABF1E891E6E00B67411 /* UIView+Extension.h */,
 				92052AC01E891E6E00B67411 /* UIView+Extension.m */,
+				397F4CE61F55578000CB8036 /* NSDate+YTT.h */,
+				397F4CE71F55578000CB8036 /* NSDate+YTT.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1666,6 +1671,7 @@
 				92052B781E891E6F00B67411 /* NSObject+Tips.m in Sources */,
 				92052CAF1E8925D000B67411 /* IQTextView.m in Sources */,
 				92052BA41E891E6F00B67411 /* WBHomeMenuHeaderView.m in Sources */,
+				397F4CE81F55578000CB8036 /* NSDate+YTT.m in Sources */,
 				92052B8C1E891E6F00B67411 /* MBProgressHUD.m in Sources */,
 				92052CAE1E8925D000B67411 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				92052BAC1E891E6F00B67411 /* WBStatusToolBar.m in Sources */,
