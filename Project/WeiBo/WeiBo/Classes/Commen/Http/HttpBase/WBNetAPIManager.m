@@ -13,9 +13,10 @@
 
 @implementation WBNetAPIManager
 
+static WBNetAPIManager *_netAPIManager = nil;
+
 + (WBNetAPIManager *)shareNetAPIManager
 {
-    static WBNetAPIManager *_netAPIManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _netAPIManager = [[WBNetAPIManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseAPIUrlString]];

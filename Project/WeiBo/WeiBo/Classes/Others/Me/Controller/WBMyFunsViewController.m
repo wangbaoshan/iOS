@@ -12,6 +12,7 @@
 #import "WBAccountTool.h"
 #import "WBAccount.h"
 #import "WBMyFunsResult.h"
+#import "WBMyFunCell.h"
 
 @interface WBMyFunsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -36,27 +37,44 @@
     
     self.navigationItem.title = @"粉丝";
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
     tableView.backgroundColor = self.view.backgroundColor;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
     self.tableView = tableView;
     
+//    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+//    header.lastUpdatedTimeLabel.hidden = YES;
+//    self.tableView.mj_header = header;
+    
+//    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+//    self.tableView.mj_footer = footer;
+    
     [self.view presentLoadingTips:nil];
     WBMyFunsParameter *param = [WBMyFunsParameter param];
     NSString *uid = [WBAccountTool uid];
     param.uid = @(uid.longLongValue);
+    param.trim_status = @(0);
     [WBNetAPIBusiness myFuns:param completion:^(WBMyFunsResult *result, NSError *error) {
         [self.view dismissTips];
         if (error) {
-            
+            [self.view presentFailureTips:error.localizedDescription];
         } else {
             [self.myFuns addObjectsFromArray:result.users];
             [self.tableView reloadData];
         }
     }];
+}
+
+- (void)loadNewData
+{
+    
+}
+
+- (void)loadMoreData
+{
+    
 }
 
 #pragma mark - UITableViewDataSource
@@ -73,12 +91,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"myFun";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-    cell.textLabel.text = self.myFuns[indexPath.row].name;
+    WBMyFunCell *cell = [WBMyFunCell cellWithTableView:tableView];
+    cell.myFun = self.myFuns[indexPath.row];
     return cell;
 }
 
@@ -87,6 +101,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (self.myFuns.count) {
+        return @"全部粉丝";
+    } else {
+        return nil;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kWBMyFunCellHeight;
 }
 
 @end

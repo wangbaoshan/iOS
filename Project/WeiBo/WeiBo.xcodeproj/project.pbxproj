@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		397F4CE41F544B5D00CB8036 /* WBMyFunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F4CE21F544B5D00CB8036 /* WBMyFunCell.m */; };
+		397F4CE51F544B5D00CB8036 /* WBMyFunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397F4CE31F544B5D00CB8036 /* WBMyFunCell.xib */; };
 		39DDB7AF1F53095A00AA4354 /* WBMyFunsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7AE1F53095A00AA4354 /* WBMyFunsViewController.m */; };
 		39DDB7B21F53110900AA4354 /* WBMyFunsParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7B11F53110900AA4354 /* WBMyFunsParameter.m */; };
 		39DDB7B51F53180100AA4354 /* WBMyFuns.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDB7B41F53180100AA4354 /* WBMyFuns.m */; };
@@ -194,6 +196,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		397F4CE11F544B5D00CB8036 /* WBMyFunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunCell.h; sourceTree = "<group>"; };
+		397F4CE21F544B5D00CB8036 /* WBMyFunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFunCell.m; sourceTree = "<group>"; };
+		397F4CE31F544B5D00CB8036 /* WBMyFunCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBMyFunCell.xib; sourceTree = "<group>"; };
 		39DDB7AD1F53095A00AA4354 /* WBMyFunsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunsViewController.h; sourceTree = "<group>"; };
 		39DDB7AE1F53095A00AA4354 /* WBMyFunsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMyFunsViewController.m; sourceTree = "<group>"; };
 		39DDB7B01F53110900AA4354 /* WBMyFunsParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMyFunsParameter.h; sourceTree = "<group>"; };
@@ -1037,6 +1042,9 @@
 				92052B5F1E891E6F00B67411 /* WBSettingCacheCell.m */,
 				92052B601E891E6F00B67411 /* WBSettingCell.h */,
 				92052B611E891E6F00B67411 /* WBSettingCell.m */,
+				397F4CE11F544B5D00CB8036 /* WBMyFunCell.h */,
+				397F4CE21F544B5D00CB8036 /* WBMyFunCell.m */,
+				397F4CE31F544B5D00CB8036 /* WBMyFunCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1474,6 +1482,7 @@
 				TargetAttributes = {
 					92052A731E891DBB00B67411 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = R28TV63EPF;
 						ProvisioningStyle = Automatic;
 					};
 					92052A8C1E891DBC00B67411 = {
@@ -1513,6 +1522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397F4CE51F544B5D00CB8036 /* WBMyFunCell.xib in Resources */,
 				92052CB51E8925D000B67411 /* IQKeyboardManager.bundle in Resources */,
 				92052C021E89226A00B67411 /* Info.plist in Resources */,
 				92052BE81E89220000B67411 /* SVProgressHUD.bundle in Resources */,
@@ -1671,6 +1681,7 @@
 				92052B9E1E891E6F00B67411 /* WBStatusRetweetedFrame.m in Sources */,
 				92052BA91E891E6F00B67411 /* WBStatusPhotosView.m in Sources */,
 				92052C7A1E89253800B67411 /* SDWebImagePrefetcher.m in Sources */,
+				397F4CE41F544B5D00CB8036 /* WBMyFunCell.m in Sources */,
 				92052C431E89227100B67411 /* MJRefreshAutoStateFooter.m in Sources */,
 				927728F31F2DBCC600D082C4 /* BSPhotoBrowser.m in Sources */,
 				92052B9A1E891E6F00B67411 /* WBStatusDetailFrame.m in Sources */,
@@ -1842,8 +1853,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = R28TV63EPF;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiBo/PrefixHeader.pch";
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1858,7 +1869,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R28TV63EPF;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiBo/PrefixHeader.pch";
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

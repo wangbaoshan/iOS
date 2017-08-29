@@ -26,7 +26,7 @@
 + (void)initialize
 {
     [super initialize];
-    [self setupTabBarTheme];
+//    [self setupTabBarTheme];
     [self setupTabBarItemTheme];
 }
 
@@ -63,10 +63,6 @@
     WBSendViewController *sendVC = [[WBSendViewController alloc] init];
     WBNavigationController *sendNav = [[WBNavigationController alloc] initWithRootViewController:sendVC];
     [self presentViewController:sendNav animated:YES completion:nil];
-}
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
 }
 
 - (void)viewDidLoad {
