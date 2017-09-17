@@ -20,6 +20,7 @@
 #import "WBMeItem.h"
 #import "WBMeCell.h"
 #import "WBMyFunsViewController.h"
+#import "WBMyStatusViewController.h"
 
 @interface WBMeViewController () <UITableViewDataSource, UITableViewDelegate, WBMeHeaderViewDelegate>
 
@@ -146,7 +147,9 @@
 
 - (void)meStatus
 {
-    
+    WBMyStatusViewController *myStatusVC = [[WBMyStatusViewController alloc] init];
+    myStatusVC.backBarItemString = [self.navigationItem.title copy];
+    [self.navigationController pushViewController:myStatusVC animated:YES];
 }
 
 - (void)meAttention

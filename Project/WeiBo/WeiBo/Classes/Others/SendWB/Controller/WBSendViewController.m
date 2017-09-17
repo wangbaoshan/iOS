@@ -13,17 +13,22 @@
 #import "WBUser.h"
 #import "WBTextView.h"
 #import "WBSendToolBar.h"
-#import "WBEmotionKeyboard.h"
+#import "BSEmotionKeyboard.h"
+#import "BSEmotionModel.h"
+
+#import <objc/runtime.h>
 
 #define kToolBarHeight 44.0
 #define kDIYKeyboardHeight 216.0
+
+static const char kNSTextAttachmentChs;
 
 @interface WBSendViewController () <UITextViewDelegate, WBSendToolBarDelegate>
 
 @property (nonatomic, weak) WBTextView *textView;
 @property (nonatomic, weak) WBSendToolBar *toolBar;
 
-@property (nonatomic, strong) WBEmotionKeyboard *keyboardEmotion;
+@property (nonatomic, strong) BSEmotionKeyboard *keyboardEmotion;
 @property (nonatomic, strong) UIView *keyboardMore;
 
 @property (nonatomic, assign, getter=isChangingKeyboardEmotion) BOOL changingKeyboardEmotion;
@@ -41,9 +46,38 @@
 - (UIView *)keyboardEmotion
 {
     if (_keyboardEmotion == nil) {
-        _keyboardEmotion = [WBEmotionKeyboard emotionKeyboard];
-        _keyboardEmotion.bounds = CGRectMake(0, 0, kScreenWidth, kDIYKeyboardHeight);
-        _keyboardEmotion.backgroundColor = [UIColor redColor];
+        
+        [BSEmotionKeyboard setKeyboardHeight:kDIYKeyboardHeight];
+        _keyboardEmotion = [BSEmotionKeyboard emotionKeyboard];
+        
+        BSEmotionModel *model0 = [[BSEmotionModel alloc] init];
+        model0.emotionType = BSEmotionType_SmallPicture;
+        model0.plistDirectory = @"EmotionIcons/default/info.plist";
+        model0.directory = @"EmotionIcons/default";
+        PTToolbarItem *item0 = [[PTToolbarItem alloc] init];
+        item0.indexTextString = @"默认";
+        model0.toolbarItem = item0;
+        
+        
+        BSEmotionModel *model1 = [[BSEmotionModel alloc] init];
+        model1.emotionType = BSEmotionType_Emoji;
+        model1.plistDirectory = @"EmotionIcons/emoji/info.plist";
+        model1.directory = @"EmotionIcons/emoji";
+        PTToolbarItem *item1 = [[PTToolbarItem alloc] init];
+        item1.indexTextString = @"emoji";
+        model1.toolbarItem = item1;
+        
+        BSEmotionModel *model2 = [[BSEmotionModel alloc] init];
+        model2.emotionType = BSEmotionType_SmallPicture;
+        model2.plistDirectory = @"EmotionIcons/lxh/info.plist";
+        model2.directory = @"EmotionIcons/lxh";
+        PTToolbarItem *item2 = [[PTToolbarItem alloc] init];
+        item2.indexTextString = @"浪小花";
+        model2.toolbarItem = item2;
+        
+        NSArray<BSEmotionModel *> *emotionModels = @[model0, model1, model2];
+        _keyboardEmotion.emotionModels = emotionModels;
+        
     }
     return _keyboardEmotion;
 }
@@ -122,7 +156,87 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     // 键盘即将隐藏, 就会发出UIKeyboardWillHideNotification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    // 添加键盘操作的相关通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickSmallPicture:) name:kEmotionKeyboardDidClickSmallPicture object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickEmoji:) name:kEmotionKeyboardDidClickEmoji object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickLargePicture:) name:kEmotionKeyboardDidClickLargePicture object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickDeleteButton:) name:kEmotionKeyboardDidClickDeleteButton object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickAddButton:) name:kEmotionKeyboardDidClickAddButton object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickSendButton:) name:kEmotionKeyboardDidClickSendButton object:nil];
 }
+
+- (void)clickSmallPicture:(NSNotification *)noti
+{
+    BSEmotionSmallPicture *smallPicture = noti.object;
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
+    
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = smallPicture.smallImage;
+    attachment.bounds = CGRectMake(0, -3, self.textView.font.lineHeight, self.textView.font.lineHeight);
+    objc_setAssociatedObject(attachment, &kNSTextAttachmentChs, smallPicture.chs, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    
+    NSAttributedString *attachString = [NSAttributedString attributedStringWithAttachment:attachment];
+    
+    NSRange range = self.textView.selectedRange;
+    NSInteger location = range.location;
+    NSInteger length = range.length;
+    if (length > 0) { // replace
+        [attributedText replaceCharactersInRange:range withAttributedString:attachString];
+    } else { // insert
+        [attributedText insertAttributedString:attachString atIndex:location];
+    }
+    [attributedText addAttribute:NSFontAttributeName value:self.textView.font range:NSMakeRange(0, attributedText.length)];
+    
+    self.textView.attributedText = attributedText;
+    self.textView.selectedRange = NSMakeRange(location + 1, 0);
+}
+
+- (void)clickEmoji:(NSNotification *)noti
+{
+    BSEmotionEmoji *emoji = noti.object;
+    [self.textView insertText:emoji.emojiString];
+}
+
+- (void)clickLargePicture:(NSNotification *)noti
+{
+    BSEmotionLargePicture *largePicture = noti.object;
+    NSLog(@"largePicture=====%@", largePicture.chs);
+}
+
+- (void)clickDeleteButton:(NSNotification *)noti
+{
+    [self.textView deleteBackward];
+}
+
+- (void)clickAddButton:(NSNotification *)noti
+{
+    NSLog(@"add emotion");
+    
+}
+
+- (void)clickSendButton:(NSNotification *)noti
+{
+    NSAttributedString *attString = self.textView.attributedText;
+    if (!attString.length) return;
+    
+    NSMutableString *string = [NSMutableString string];
+    
+    [attString enumerateAttributesInRange:NSMakeRange(0, attString.length) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(NSDictionary<NSString *,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
+        
+        NSTextAttachment *attachment = attrs[@"NSAttachment"];
+        if (attachment) { // 富文本
+            NSString *str = objc_getAssociatedObject(attachment, &kNSTextAttachmentChs);
+            [string appendString:str];
+        } else { // 普通文本
+            NSString *substr = [attString attributedSubstringFromRange:range].string;
+            [string appendString:substr];
+        }
+    }];
+    
+    self.textView.text = nil;
+}
+
 
 - (void)keyboardWillShow:(NSNotification *)noti
 {
@@ -253,21 +367,9 @@
     self.navigationItem.rightBarButtonItem.enabled = textView.hasText;
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -28,4 +28,7 @@
 
 @property (nonatomic, strong) NSArray<WBStatusPhoto *> *pic_urls;
 
+/// 微博信息图文混排内容
+@property (nonatomic, copy) NSAttributedString *attributeText;
+
 @end

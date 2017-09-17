@@ -26,7 +26,7 @@
 #import "BSPhotoBrowser.h"
 #import "WBStatusPhotosView.h"
 
-#define kPageSize 50
+#define kPageSize 20
 
 @interface WBHomeViewController () <UITableViewDataSource, UITableViewDelegate>
 

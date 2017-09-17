@@ -9,6 +9,7 @@
 #import "WBNetAPIBusiness.h"
 
 #import "WBNetAPIManager.h"
+#import "WBHomeStatusesParamter.h"
 #import "WBHomeStatusesResult.h"
 #import "WBUserContentParamter.h"
 #import "WBUserContentResult.h"
@@ -35,7 +36,7 @@
     
 }
 
-+ (void)homeStatuses:(WBHomeStatusesResult *)paramter completion:(void (^)(WBHomeStatusesResult *, NSError *))completion
++ (void)homeStatuses:(WBHomeStatusesParamter *)paramter completion:(void (^)(WBHomeStatusesResult *, NSError *))completion
 {
     NSMutableDictionary *param = [paramter mj_keyValues];
     [WBNetAPIManager requestWithURL:kCurrentUserWeiBoUrlString parameters:param method:WBNetMethod_GET completion:^(id responseObjects, NSError *error) {

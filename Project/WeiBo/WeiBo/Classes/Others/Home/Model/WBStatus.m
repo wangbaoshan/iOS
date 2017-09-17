@@ -64,5 +64,13 @@
     _source = [NSString stringWithFormat:@"来自%@", source];
 }
 
+- (void)setText:(NSString *)text
+{
+    _text = [text copy];
+    
+}
+
+
+
 
 @end
